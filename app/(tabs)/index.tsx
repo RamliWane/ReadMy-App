@@ -1,7 +1,8 @@
 import { Image } from "expo-image";
-import { View, Text, TextInput, ScrollView } from "react-native";
+import { View, Text, TextInput, ScrollView , TouchableOpacity} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ArrowRight, BookmarkPlus } from "lucide-react-native";
+import { router } from "expo-router";
 
 export default function App() {
   return (
@@ -51,11 +52,13 @@ export default function App() {
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{ paddingHorizontal: 20, gap: 12 }}
           >
-            <Image
-              source={require("../../assets/profile.jpeg")}
-              className="w-32 h-48 rounded-xl"
-              contentFit="cover"
-            />
+            <TouchableOpacity onPress={() => router.push("./detail/[id]")}>
+              <Image
+                source={require("../../assets/profile.jpeg")}
+                className="w-32 h-48 rounded-xl"
+                contentFit="cover"
+              />
+            </TouchableOpacity>
             <Image
               source={require("../../assets/profile.jpeg")}
               className="w-32 h-48 rounded-xl"
