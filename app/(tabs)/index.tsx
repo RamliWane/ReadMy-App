@@ -1,5 +1,5 @@
 import { Image } from "expo-image";
-import { View, Text, TextInput, ScrollView , TouchableOpacity} from "react-native";
+import { View, Text, TextInput, ScrollView, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ArrowRight, BookmarkPlus } from "lucide-react-native";
 import { router } from "expo-router";
@@ -38,98 +38,98 @@ export default function App() {
 
           <View className="bg-gray-300 w-[92%] h-px mx-5" />
 
-        <View className="pb-5">
+          <View className="pb-5">
 
-          <View className="px-5 flex-row items-center justify-between">
-            <Text className="text-white text-xl font-semibold mb-3">
-              Recomended For You
-            </Text>
-            <ArrowRight size={24} color="white" />
-          </View>
+            <View className="px-5 flex-row items-center justify-between">
+              <Text className="text-white text-xl font-semibold mb-3">
+                Recomended For You
+              </Text>
+              <ArrowRight size={24} color="white" />
+            </View>
 
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{ paddingHorizontal: 20, gap: 12 }}
-          >
-            <TouchableOpacity onPress={() => router.push("./detail/[id]")}>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{ paddingHorizontal: 20, gap: 12 }}
+            >
+              <TouchableOpacity onPress={() => router.push("./detail/[id]")}>
+                <Image
+                  source={require("../../assets/profile.jpeg")}
+                  className="w-32 h-48 rounded-xl"
+                  contentFit="cover"
+                />
+              </TouchableOpacity>
               <Image
                 source={require("../../assets/profile.jpeg")}
                 className="w-32 h-48 rounded-xl"
                 contentFit="cover"
               />
-            </TouchableOpacity>
-            <Image
-              source={require("../../assets/profile.jpeg")}
-              className="w-32 h-48 rounded-xl"
-              contentFit="cover"
-            />
-            <Image
-              source={require("../../assets/profile.jpeg")}
-              className="w-32 h-48 rounded-xl"
-              contentFit="cover"
-            />
-            <Image
-              source={require("../../assets/profile.jpeg")}
-              className="w-32 h-48 rounded-xl"
-              contentFit="cover"
-            />
-            <Image
-              source={require("../../assets/profile.jpeg")}
-              className="w-32 h-48 rounded-xl"
-              contentFit="cover"
-            />
-            <Image
-              source={require("../../assets/profile.jpeg")}
-              className="w-32 h-48 rounded-xl"
-              contentFit="cover"
-            />
-          </ScrollView>
+              <Image
+                source={require("../../assets/profile.jpeg")}
+                className="w-32 h-48 rounded-xl"
+                contentFit="cover"
+              />
+              <Image
+                source={require("../../assets/profile.jpeg")}
+                className="w-32 h-48 rounded-xl"
+                contentFit="cover"
+              />
+              <Image
+                source={require("../../assets/profile.jpeg")}
+                className="w-32 h-48 rounded-xl"
+                contentFit="cover"
+              />
+              <Image
+                source={require("../../assets/profile.jpeg")}
+                className="w-32 h-48 rounded-xl"
+                contentFit="cover"
+              />
+            </ScrollView>
 
-          <View className="px-5 pt-5 flex-row items-center justify-between">
-            <Text className="text-white text-xl font-semibold mb-3">
-              Most Popular
-            </Text>
-            <ArrowRight size={24} color="white" />
+            <View className="px-5 pt-5 flex-row items-center justify-between">
+              <Text className="text-white text-xl font-semibold mb-3">
+                Most Popular
+              </Text>
+              <ArrowRight size={24} color="white" />
+            </View>
+
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{ paddingHorizontal: 20, gap: 12 }}
+            >
+              <Image
+                source={require("../../assets/profile.jpeg")}
+                className="w-32 h-48 rounded-xl"
+                contentFit="cover"
+              />
+              <Image
+                source={require("../../assets/profile.jpeg")}
+                className="w-32 h-48 rounded-xl"
+                contentFit="cover"
+              />
+              <Image
+                source={require("../../assets/profile.jpeg")}
+                className="w-32 h-48 rounded-xl"
+                contentFit="cover"
+              />
+              <Image
+                source={require("../../assets/profile.jpeg")}
+                className="w-32 h-48 rounded-xl"
+                contentFit="cover"
+              />
+              <Image
+                source={require("../../assets/profile.jpeg")}
+                className="w-32 h-48 rounded-xl"
+                contentFit="cover"
+              />
+              <Image
+                source={require("../../assets/profile.jpeg")}
+                className="w-32 h-48 rounded-xl"
+                contentFit="cover"
+              />
+            </ScrollView>
           </View>
-
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{ paddingHorizontal: 20, gap: 12 }}
-          >
-            <Image
-              source={require("../../assets/profile.jpeg")}
-              className="w-32 h-48 rounded-xl"
-              contentFit="cover"
-            />
-            <Image
-              source={require("../../assets/profile.jpeg")}
-              className="w-32 h-48 rounded-xl"
-              contentFit="cover"
-            />
-            <Image
-              source={require("../../assets/profile.jpeg")}
-              className="w-32 h-48 rounded-xl"
-              contentFit="cover"
-            />
-            <Image
-              source={require("../../assets/profile.jpeg")}
-              className="w-32 h-48 rounded-xl"
-              contentFit="cover"
-            />
-            <Image
-              source={require("../../assets/profile.jpeg")}
-              className="w-32 h-48 rounded-xl"
-              contentFit="cover"
-            />
-            <Image
-              source={require("../../assets/profile.jpeg")}
-              className="w-32 h-48 rounded-xl"
-              contentFit="cover"
-            />
-          </ScrollView>
-        </View>
 
         </View>
       </ScrollView>

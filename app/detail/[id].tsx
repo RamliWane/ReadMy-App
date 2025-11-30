@@ -1,7 +1,7 @@
 import { Image } from "expo-image";
-import { View, Text, TextInput, ScrollView, TouchableOpacity } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ArrowRight, BookmarkPlus, Star } from "lucide-react-native";
+import { ArrowLeft, Bookmark, Star, ArrowRight } from "lucide-react-native";
 import { router } from "expo-router";
 
 export default function App() {
@@ -11,124 +11,193 @@ export default function App() {
                 className="flex-1"
                 showsVerticalScrollIndicator={false}
             >
-                <View className="pt-6 gap-6">
-                    <View className="px-5 gap-4">
-                        <View className="flex-row gap-4">
-                            <Image
-                                source={require("../../assets/profile.jpeg")}
-                                className="w-32 h-50 rounded-xl"
-                            />
-                            <View className="flex-1 justify-between py-1">
-                                <View>
-                                    <Text className="text-white text-xl font-bold leading-6 mb-2">
-                                        The Fight Club In A Jungle
-                                    </Text>
-                                    <Text className="text-gray-400 text-sm mb-1">
-                                        Author: Ramli Silawane
-                                    </Text>
-                                    <Text className="text-gray-400 text-sm mb-3">
-                                        Release: 2024
-                                    </Text>
-                                    <View className="flex-row gap-1">
-                                        <Star size={18} color="white" fill="white" />
-                                        <Star size={18} color="white" fill="white" />
-                                        <Star size={18} color="white" fill="white" />
-                                        <Star size={18} color="white" fill="white" />
-                                        <Star size={18} color="white" fill="white" />
-                                    </View>
-
-                                    <TouchableOpacity className="bg-white py-3 mt-3 rounded-xl flex-row items-center justify-center gap-2">
-                                        <BookmarkPlus size={20} color="#0F172A" />
-                                        <Text className="text-[#0F172A] font-semibold text-base">
-                                            Add to Library
-                                        </Text>
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-                        </View>
-                    </View>
-
-                    <View className="bg-gray-300 w-[92%] h-px mx-5" />
-
-                    <View className="flex-row justify-center gap-5">
-                        <Text className="text-white text-[15px] font-bold ">
-                            Keterangan
-                        </Text>
-                        <Text className="text-white text-[15px] font-bold">
-                            Synopsis
-                        </Text>
-                    </View>
-
-                    <View className="ml-5">
-                        <Text className="text-white text-xl font-bold leading-6 mb-2">
-                            Keterangan
-                        </Text>
-                        <Text className="text-white text-[16px] font-bold leading-6 mb-2">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi libero minus ullam nihil adipisci atque esse illum suscipit dolore, soluta, amet quo fugiat repellendus voluptates, velit voluptatibus laudantium odio itaque.
-                        </Text>
-                    </View>
-
-                    {/* <View className="ml-5">
-                        <Text className="text-white text-xl font-bold leading-6 mb-2">
-                            Synopsis
-                        </Text>
-                        <Text className="text-white text-[16px] font-bold leading-6 mb-2">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi libero minus ullam nihil adipisci atque esse illum suscipit dolore, soluta, amet quo fugiat repellendus voluptates, velit voluptatibus laudantium odio itaque.
-                        </Text>
-                    </View> */}
-
-                    <View className="bg-gray-300 w-[92%] h-px mx-5" />
-
-                    <View className="pb-5">
-                        <View className="px-5 flex-row items-center justify-between">
-                            <Text className="text-white text-xl font-semibold mb-3">
-                                Recomended For You
-                            </Text>
-                            <ArrowRight size={24} color="white" />
-                        </View>
-
-                        <ScrollView
-                            horizontal
-                            showsHorizontalScrollIndicator={false}
-                            contentContainerStyle={{ paddingHorizontal: 20, gap: 12 }}
-                        >
-                            <TouchableOpacity onPress={() => router.push("./detail/[id]")}>
-                                <Image
-                                    source={require("../../assets/profile.jpeg")}
-                                    className="w-32 h-48 rounded-xl"
-                                    contentFit="cover"
-                                />
-                            </TouchableOpacity>
-                            <Image
-                                source={require("../../assets/profile.jpeg")}
-                                className="w-32 h-48 rounded-xl"
-                                contentFit="cover"
-                            />
-                            <Image
-                                source={require("../../assets/profile.jpeg")}
-                                className="w-32 h-48 rounded-xl"
-                                contentFit="cover"
-                            />
-                            <Image
-                                source={require("../../assets/profile.jpeg")}
-                                className="w-32 h-48 rounded-xl"
-                                contentFit="cover"
-                            />
-                            <Image
-                                source={require("../../assets/profile.jpeg")}
-                                className="w-32 h-48 rounded-xl"
-                                contentFit="cover"
-                            />
-                            <Image
-                                source={require("../../assets/profile.jpeg")}
-                                className="w-32 h-48 rounded-xl"
-                                contentFit="cover"
-                            />
-                        </ScrollView>
-                    </View>
-
+                <View className="flex-row justify-between items-center px-5 pt-4 pb-2">
+                    <TouchableOpacity className="w-10 h-10 bg-gray-200 rounded-full items-center justify-center" onPress={() => router.back()}>
+                        <ArrowLeft size={24} color="#000" />
+                    </TouchableOpacity>
+                    <TouchableOpacity className="w-10 h-10 bg-white rounded-full items-center justify-center">
+                        <Bookmark size={20} color="#0F172A" fill="#0F172A" />
+                    </TouchableOpacity>
                 </View>
+
+                <View className="items-center py-6">
+                    <Image
+                        source={require("../../assets/profile.jpeg")}
+                        className="w-48 h-72 rounded-lg shadow-lg"
+                        contentFit="cover"
+                    />
+                </View>
+
+                <View className="items-center px-5 mb-4">
+                    <Text className="text-white text-xl font-bold text-center mb-1">
+                        The Minds of Billy Milligan
+                    </Text>
+                    <Text className="text-white text-base">
+                        Daniel Keyes
+                    </Text>
+                </View>
+
+                <View className="flex-row justify-around px-10 py-4 bg-white mx-5 rounded-lg mb-4">
+                    <View className="items-center">
+                        <Text className="text-gray-900 text-lg font-bold">4.5</Text>
+                        <Text className="text-gray-500 text-xs">Rating</Text>
+                    </View>
+                    <View className="w-px bg-gray-300" />
+                    <View className="items-center">
+                        <Text className="text-gray-900 text-lg font-bold">374</Text>
+                        <Text className="text-gray-500 text-xs">Jumlah Halaman</Text>
+                    </View>
+                    <View className="w-px bg-gray-300" />
+                    <View className="items-center">
+                        <Text className="text-gray-900 text-lg font-bold">IND</Text>
+                        <Text className="text-gray-500 text-xs">Bahasa</Text>
+                    </View>
+                </View>
+
+                <View className="bg-white mx-5 rounded-lg p-5 mb-4">
+                    <View className="mb-3">
+                        <Text className="text-gray-900 text-sm">
+                            <Text className="font-semibold">Penerbit : </Text>
+                            <Text className="text-gray-600">Random House</Text>
+                        </Text>
+                    </View>
+                    <View className="mb-3">
+                        <Text className="text-gray-900 text-sm">
+                            <Text className="font-semibold">Tahun Terbit : </Text>
+                            <Text className="text-gray-600">Hard Cover</Text>
+                        </Text>
+                    </View>
+                    <View className="mb-3">
+                        <Text className="text-gray-900 text-sm">
+                            <Text className="font-semibold">ISBN : </Text>
+                            <Text className="text-gray-600">1981</Text>
+                        </Text>
+                    </View>
+                    <View className="mb-3">
+                        <Text className="text-gray-900 text-sm">
+                            <Text className="font-semibold">Stock : </Text>
+                            <Text className="text-gray-600">Random House</Text>
+                        </Text>
+                    </View>
+                    <View className="mb-3">
+                        <Text className="text-gray-900 text-sm">
+                            <Text className="font-semibold">Genre : </Text>
+                            <Text className="text-gray-600">Hard Cover</Text>
+                        </Text>
+                    </View>
+                    <View className="mt-2">
+                        <Text className="text-gray-900 font-semibold text-base mb-2">
+                            Description
+                        </Text>
+                        <Text className="text-gray-600 text-sm leading-5">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam natus beatae et magni pariatur maxime ea minima quidem possimus officiis, culpa tempore, suscipit distinctio fugiat, sapiente exercitationem accusantium inventore id!
+                        </Text>
+                    </View>
+                    <View className="px-5 pb-3 pt-4">
+                        <TouchableOpacity className="bg-[#0F172A] py-4 rounded-full items-center">
+                            <Text className="text-white font-bold text-base">
+                                Start Reading
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+
+                <View className="bg-gray-300 w-[90%] h-px mx-5 mt-2 mb-2" />
+
+                <View className="pb-5">
+
+                    <View className="px-5 flex-row items-center justify-between">
+                        <Text className="text-white text-xl font-semibold mb-3">
+                            Recomended For You
+                        </Text>
+                        <ArrowRight size={24} color="white" />
+                    </View>
+
+                    <ScrollView
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        contentContainerStyle={{ paddingHorizontal: 20, gap: 12 }}
+                    >
+                        <TouchableOpacity onPress={() => router.push("./detail/[id]")}>
+                            <Image
+                                source={require("../../assets/profile.jpeg")}
+                                className="w-32 h-48 rounded-xl"
+                                contentFit="cover"
+                            />
+                        </TouchableOpacity>
+                        <Image
+                            source={require("../../assets/profile.jpeg")}
+                            className="w-32 h-48 rounded-xl"
+                            contentFit="cover"
+                        />
+                        <Image
+                            source={require("../../assets/profile.jpeg")}
+                            className="w-32 h-48 rounded-xl"
+                            contentFit="cover"
+                        />
+                        <Image
+                            source={require("../../assets/profile.jpeg")}
+                            className="w-32 h-48 rounded-xl"
+                            contentFit="cover"
+                        />
+                        <Image
+                            source={require("../../assets/profile.jpeg")}
+                            className="w-32 h-48 rounded-xl"
+                            contentFit="cover"
+                        />
+                        <Image
+                            source={require("../../assets/profile.jpeg")}
+                            className="w-32 h-48 rounded-xl"
+                            contentFit="cover"
+                        />
+                    </ScrollView>
+
+                    <View className="px-5 pt-5 flex-row items-center justify-between">
+                        <Text className="text-white text-xl font-semibold mb-3">
+                            Most Popular
+                        </Text>
+                        <ArrowRight size={24} color="white" />
+                    </View>
+
+                    <ScrollView
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        contentContainerStyle={{ paddingHorizontal: 20, gap: 12 }}
+                    >
+                        <Image
+                            source={require("../../assets/profile.jpeg")}
+                            className="w-32 h-48 rounded-xl"
+                            contentFit="cover"
+                        />
+                        <Image
+                            source={require("../../assets/profile.jpeg")}
+                            className="w-32 h-48 rounded-xl"
+                            contentFit="cover"
+                        />
+                        <Image
+                            source={require("../../assets/profile.jpeg")}
+                            className="w-32 h-48 rounded-xl"
+                            contentFit="cover"
+                        />
+                        <Image
+                            source={require("../../assets/profile.jpeg")}
+                            className="w-32 h-48 rounded-xl"
+                            contentFit="cover"
+                        />
+                        <Image
+                            source={require("../../assets/profile.jpeg")}
+                            className="w-32 h-48 rounded-xl"
+                            contentFit="cover"
+                        />
+                        <Image
+                            source={require("../../assets/profile.jpeg")}
+                            className="w-32 h-48 rounded-xl"
+                            contentFit="cover"
+                        />
+                    </ScrollView>
+                </View>
+
             </ScrollView>
-        </SafeAreaView >
+        </SafeAreaView>
     );
 }
